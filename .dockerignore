@@ -1,0 +1,13 @@
+venv/
+.git/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+data/
+mlruns/
+
+.env
+
+*.csv
+*.xlsx

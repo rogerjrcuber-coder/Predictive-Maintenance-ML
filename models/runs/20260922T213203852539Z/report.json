@@ -1,0 +1,123 @@
+{
+  "created_at": "2026-09-22T21:32:03.845950+00:00",
+  "model_type": "XGBClassifier",
+  "automl_trials": 6,
+  "dataset": [
+    "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\data\\synthetic\\demo\\healthy_machine.csv",
+    "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\data\\synthetic\\demo\\monitor_machine.csv",
+    "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\data\\synthetic\\demo\\critical_machine.csv"
+  ],
+  "dataset_fingerprint": [
+    "52d2b403114649c3a9ff232ea5f531a6e424c16d2a114ba35d16ef8002b3abb0",
+    "cfa45450434bd33809750145106ac996b8f10805da96f7e2b03d2d4773cfe8c3",
+    "42bd422c6e37e50b37a7a11407e6ef43a70c0305312bc4255b6fd6c408584b7e"
+  ],
+  "dataset_name": "demo",
+  "features": [
+    "voltage",
+    "rpm",
+    "pressure",
+    "vibration",
+    "age",
+    "temperature",
+    "current",
+    "power_kw",
+    "load_pct",
+    "maintenance_count",
+    "error_count_24h",
+    "error_count_7d"
+  ],
+  "target_column": "failure",
+  "rows": 15598,
+  "failure_rate": 0.2754199256314912,
+  "targets": {
+    "roc_auc": 0.8,
+    "failure_recall": 0.8
+  },
+  "status": "accepted",
+  "best_config": {
+    "max_depth": 4,
+    "learning_rate": 0.1,
+    "n_estimators": 200
+  },
+  "best_metrics": {
+    "accuracy": 0.982051282051282,
+    "roc_auc": 0.9990629178575419,
+    "pr_auc": 0.9975836344327016,
+    "failure_recall": 0.9848661233993015
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "config": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "accuracy": 0.9791666666666666,
+      "roc_auc": 0.9990479863288984,
+      "pr_auc": 0.9975283839666879,
+      "failure_recall": 0.9918509895227008
+    },
+    {
+      "trial": 2,
+      "config": {
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "n_estimators": 300
+      },
+      "accuracy": 0.9788461538461538,
+      "roc_auc": 0.9989666352418057,
+      "pr_auc": 0.9973354124129394,
+      "failure_recall": 0.9837019790454016
+    },
+    {
+      "trial": 3,
+      "config": {
+        "max_depth": 8,
+        "learning_rate": 0.03,
+        "n_estimators": 400
+      },
+      "accuracy": 0.9804487179487179,
+      "roc_auc": 0.9990186381519093,
+      "pr_auc": 0.9974690136490298,
+      "failure_recall": 0.9837019790454016
+    },
+    {
+      "trial": 4,
+      "config": {
+        "max_depth": 5,
+        "learning_rate": 0.1,
+        "n_estimators": 250
+      },
+      "accuracy": 0.9801282051282051,
+      "roc_auc": 0.9989218406558752,
+      "pr_auc": 0.9972043963167809,
+      "failure_recall": 0.9755529685681025
+    },
+    {
+      "trial": 5,
+      "config": {
+        "max_depth": 7,
+        "learning_rate": 0.08,
+        "n_estimators": 350
+      },
+      "accuracy": 0.9804487179487179,
+      "roc_auc": 0.9988466681323593,
+      "pr_auc": 0.9970128589064406,
+      "failure_recall": 0.9743888242142026
+    },
+    {
+      "trial": 6,
+      "config": {
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "n_estimators": 200
+      },
+      "accuracy": 0.982051282051282,
+      "roc_auc": 0.9990629178575419,
+      "pr_auc": 0.9975836344327016,
+      "failure_recall": 0.9848661233993015
+    }
+  ]
+}
