@@ -119,7 +119,5 @@
       "pr_auc": 0.9962269580507077,
       "failure_recall": 0.987012987012987
     }
-  ],
-  "run_id": "20260925T234515578701Z",
-  "run_artifact_dir": "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\Predictive-Maintenance-ML\\models\\runs\\20260925T234515578701Z"
+  ]
 }

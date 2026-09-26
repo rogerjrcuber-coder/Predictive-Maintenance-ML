@@ -1,6 +1,6 @@
 {
-  "latest_run_id": "20260922T213203852539Z",
-  "production_run_id": "20260922T213203852539Z",
+  "latest_run_id": "20260925T234515578701Z",
+  "production_run_id": "20260925T234515578701Z",
   "runs": [
     {
       "run_id": "20260922T213021616955Z",
@@ -45,6 +45,28 @@
         "failure_recall": 0.9848661233993015
       },
       "model_path": "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\models\\runs\\20260922T213203852539Z\\model.pkl"
+    },
+    {
+      "run_id": "20260925T234515578701Z",
+      "created_at": "2026-09-25T23:45:15.571767+00:00",
+      "dataset": [
+        "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\Predictive-Maintenance-ML\\data\\synthetic\\demo\\healthy_machine.csv",
+        "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\Predictive-Maintenance-ML\\data\\synthetic\\demo\\monitor_machine.csv",
+        "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\Predictive-Maintenance-ML\\data\\synthetic\\demo\\critical_machine.csv"
+      ],
+      "dataset_fingerprint": [
+        "adcd59576fd56951ed924653d33b047667f1e5b32200995a04f37cc3f6c2c124",
+        "d90bcf093598214cb9068162b6c40c04a7ebeea217f2156e1b6610960c2fef19",
+        "ec779bafa043259fc978c5c1de6cf08af89fa7aab5c812aa5652e9ec9d32d60e"
+      ],
+      "status": "accepted",
+      "metrics": {
+        "accuracy": 0.9786666666666667,
+        "roc_auc": 0.9988142798905131,
+        "pr_auc": 0.9966282947396354,
+        "failure_recall": 0.9818181818181818
+      },
+      "model_path": "C:\\Users\\roger_6xkzzbv\\predictive-maintenance\\Predictive-Maintenance-ML\\models\\runs\\20260925T234515578701Z\\model.pkl"
     }
   ]
 }

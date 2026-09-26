@@ -102,6 +102,26 @@ class RollingDemoSource:
             writer = csv.DictWriter(file, fieldnames=CSV_COLUMNS)
             if not exists:
                 writer.writeheader()
-            row = event.model_dump()
-            row["failure"] = failure
+
+            row = {
+                "machine_id": event.machine_id,
+                "timestamp": event.timestamp.isoformat(),
+                "voltage": event.voltage,
+                "rpm": event.rpm,
+                "pressure_psi": event.pressure_psi,
+                "vibration_mm_s": event.vibration_mm_s,
+                "temperature_c": event.temperature_c,
+                "current": event.current,
+                "power_kw": event.power_kw,
+                "load_pct": event.load_pct,
+                "operating_state": event.operating_state,
+                "maintenance_count": event.maintenance_count,
+                "error_count_24h": event.error_count_24h,
+                "error_count_7d": event.error_count_7d,
+                "age": event.age,
+                "vibration_delta": event.vibration_delta,
+                "pressure_delta": event.pressure_delta,
+                "temperature_delta": event.temperature_delta,
+                "failure": failure,
+            }
             writer.writerow(row)

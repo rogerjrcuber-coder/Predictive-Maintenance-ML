@@ -39,6 +39,13 @@ class PredictionRequest(BaseModel):
     pressure: float
     vibration: float
     age: int
+    temperature: float = 25.0
+    current: float = 0.0
+    power_kw: float = 0.0
+    load_pct: float = 0.0
+    maintenance_count: int = 0
+    error_count_24h: int = 0
+    error_count_7d: int = 0
 
 
 class SourceConfig(BaseModel):
@@ -72,7 +79,10 @@ def calculate_risk(probability):
     if probability >= 0.70:
         return "Critical"
 
-    elif probability >= 0.30:
+    elif probability >= 0.45:
+        return "High"
+
+    elif probability >= 0.20:
         return "Medium"
 
     else:
@@ -115,16 +125,17 @@ def build_source(source_name: str, machine_id: str = "SIM-001", csv_path: str | 
 
 @app.post("/predict")
 def predict(request: PredictionRequest):
-
-    features = np.array([
-        [
-            request.voltage,
-            request.rpm,
-            request.pressure,
-            request.vibration,
-            request.age
-        ]
-    ])
+    feature_values = request.model_dump()
+    feature_values["pressure_psi"] = request.pressure
+    feature_values["vibration_mm_s"] = request.vibration
+    feature_values["temperature_c"] = request.temperature
+    model_features = list(
+        getattr(model, "feature_names_in_", ["voltage", "rpm", "pressure", "vibration", "age"])
+    )
+    features = np.array(
+        [[feature_values.get(name, 0.0) for name in model_features]],
+        dtype=float,
+    )
 
     probability = float(
         model.predict_proba(features)[0][1]

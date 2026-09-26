@@ -89,7 +89,7 @@ with st.sidebar:
         refresh_interval = 5.0
         auto_generate = False
 
-    generate = st.button("Generate telemetry", type="primary", use_container_width=True)
+    generate = st.button("Generate telemetry", type="primary", width="stretch")
 
     if TRAINING_REPORT_PATH.exists():
         import json
@@ -207,7 +207,7 @@ def telemetry_frame(event):
         rows.append(
             {
                 "Measurement": label_map.get(name, name.replace("_", " ").title()),
-                "Value": value,
+                "Value": str(value),
                 "Unit": unit_map.get(name, ""),
             }
         )
@@ -264,7 +264,7 @@ def render_dashboard():
         st.markdown(f"**Recommendation:** {result['recommendation']}")
 
     st.subheader("Live telemetry")
-    st.dataframe(telemetry_frame(event), hide_index=True, use_container_width=True)
+    st.dataframe(telemetry_frame(event), hide_index=True, width="stretch")
 
     st.subheader("Agent activity")
     for label in [
